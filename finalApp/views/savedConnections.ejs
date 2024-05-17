@@ -1,0 +1,42 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container">
+	<div class="jumbotron"id="savedPage">
+<p class="p-3 mb-2 bg-dark text-white">Saved Details</p>
+
+<% for(var i=0;i<data.length;i++){ %>
+	<% if(presentUser == data[i].User_ID){ %>
+	
+<table class="table table-hover">
+  <thead>
+    <tr>
+       <th scope="col">Name</th>
+      <th scope="col">RSVP</th>
+      <th scope="col">Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= data[i].name %></td>
+      <td><%= data[i].rsvp %></td>
+      <td><div style="width:400px;">
+    <div style="float: left; width: 130px"> 
+        <form action="/family/<%= data[i].userid %>" method="get">
+				<button type="submit" class="btn btn-warning">Update</button>
+			</form>
+    </div>
+    <div style="float: right; width: 270px"> 
+        <form action="/user/<%= data[i].userid %>?_method=DELETE" method="post">
+				<button type="submit" class="btn btn-danger">Delete</button>
+			</form>
+    </div>
+</div>
+		</td>
+    </tr>
+  </tbody>
+</table>
+		
+<% } %>
+<% } %>
+	</div>
+</div>

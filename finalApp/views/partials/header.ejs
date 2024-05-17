@@ -1,0 +1,59 @@
+<! Doctype html>
+<html>
+
+<head>
+    <title>My Family App</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/resources/css/styles.css">
+    <!-- CSS only -->
+</head>
+
+<body id="bodyStyling">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Family App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/family">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/savedConnections">saved data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/family/new">Add Member</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <% if(!currentUser ){ %>
+                    <li><a class=text-white href="/user/login"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Login</a></li>
+                    <li><a class=text-white href="/user/register"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>SignUp</a></li>
+                    <!-- for the icons we have to use the glyphicons from the bootstrap -->
+                    <% } else { %>
+                        <!-- The other good resource for getting of the icons is the Font Awesome website -->
+                        <li><a class=text-white href="/user/logout"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Sign Out</a></li>
+                        <% } %>
+            </form>
+        </div>
+    </nav>
+    <div class="conatiner">
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+
+            <% }  %>
+    </div>
+    <div class="container">
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+
+            <% } %>
+    </div>

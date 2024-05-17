@@ -1,0 +1,29 @@
+<%- include("partials/header.ejs") %>
+	<div id="familyPageStyle" class=container>
+	<div class="jumbotron">
+		<h1>
+	Welcome to paleti family
+</h1>
+		</div>
+	</div>
+	<div class="container">
+		<div class="jumbotron">
+				<% category.forEach(function(name) { %>
+			<!-- <div class="border">
+				<h2><u><%= name.toUpperCase() %></u></h2>
+			</div> -->
+	<div class="p-3 mb-2 bg-dark text-white"><%= name.toUpperCase() %></div>
+	<% for(var i=0;i<members.length;i++){ %>
+		<% if(members[i].gender === name){ %>
+			<!-- <ul>
+		<li><i><a href="/family/<%= members[i].id %>"><%= members[i].name %></a></i></li>		
+		</ul> -->
+	<ul >
+   <li><i><a class=text-dark href="/family/<%= members[i].id %>"><%= members[i].name %></a></i></li>		
+	</ul>
+		<% } %>
+	<% } %>
+<% }); %>
+	</div>
+</div>	
+

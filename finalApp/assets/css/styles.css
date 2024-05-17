@@ -1,0 +1,60 @@
+#styleformpage {
+    margin: 2% auto;
+    width: 550px
+}
+
+#styleSignUpPage {
+    margin: 2% auto;
+    width: 500px
+}
+
+#registerSpace {
+    margin-bottom: 25px;
+}
+
+#loginSpace {
+    margin-bottom: 20px;
+}
+
+#familyPageStyle {
+    margin-top: 2%;
+}
+
+#memberDetails {
+    margin-top: 2%;
+}
+
+#newMember {
+    margin-top: 2%;
+}
+
+#savedPage {
+    margin-top: 100px;
+}
+
+#memberData {
+    padding-top: 30px;
+    padding-left: 40px;
+    font-size: 18px;
+    font-family: italic;
+}
+
+#styleImage {
+    height: 275px;
+    width: 400px;
+    float: right;
+    padding-left: 20px;
+    padding-right: 80px;
+}
+
+#categoryStyle {
+    padding-bottom: 10px;
+}
+
+#bodyStyling {
+    padding-top: 50px;
+}
+
+body {
+    background-color: #f5f5f5;
+}

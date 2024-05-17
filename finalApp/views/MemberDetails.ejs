@@ -1,0 +1,63 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="container" id="memberDetails">
+        <div class="jumbotron">
+            <div class=row>
+                <div class=" col-lg-6 col-sm-6 col-xs-12 ">
+                    <div class="thumbnail">
+                        <img id="styleImage" src='<%= member.image %>'>
+                    </div>
+                </div>
+                <div>
+                    <div id="memberData">
+                        <p>
+                            Name:
+                            <%= member.name %>
+                        </p>
+                        <p>
+                            Age:
+                            <%= member.age %>
+                        </p>
+                        <p>
+                            Gender:
+                            <%= member.gender %>
+                        </p>
+                        <p>
+                            Place:
+                            <%= member.place %>
+                        </p>
+                        <p>
+                            Details:
+                            <%= member.about %>
+                        </p>
+                        <p>
+                            DOB:
+                            <%= member.date %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="jumbotron">
+                    <p class="p-3 mb-2 bg-dark text-white">Are You Intrested </p>
+                    <div style="width:500px;">
+                        <div style="float: left; width: 130px">
+                            <form action="/user/<%= member.id %>/<%= member.name %>/Yes" method="post">
+                                <button type="submit" class="btn btn-secondary btn-lg">Yes</button>
+                            </form>
+                        </div>
+                        <div style="float: right; width: 225px">
+                            <form action="/user/<%= member.id %>/<%= member.name %>/No" method="post">
+                                <button type="submit" class="btn btn-secondary btn-lg">No</button>
+                            </form>
+                        </div>
+                        <div style="float:center; width:350px">
+                            <form action="/user/<%= member.id %>/<%= member.name %>/Maybe" method="post">
+                                <button type="submit" class="btn btn-secondary btn-lg">Maybe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
